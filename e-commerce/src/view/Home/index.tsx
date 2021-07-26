@@ -1,20 +1,46 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
+import { Container } from './style';
+import api from '../../services/api'
 
-import { Container} from './style';
 
+interface IProduct {
+    id: number;
+    name: string;
+    photo: string;
+    description: string;
+    price: number;
+}
 
 const Home: React.FC = () => {
-  return(
-    <Container>
-      <section>
-        <div>
-          <img src="https://img.elo7.com.br/product/zoom/30C5CF1/painel-redondo-festa-tecido-bola-de-futebol-c-elastico-1-5m-painel-redondo-festa-tecido.jpg" alt="bola" width= "200" height ="auto" />
-          <span>descriçao</span>
-          <h6> price</h6>
-        </div>
-      </section>
-    </Container>
-  );
+    const [data, setData] = useState<IProduct[]>([]);
+    useEffect(() => {
+        api.get('').then(
+            response => {
+                setData(response.data)
+            }
+        )
+    });
+
+    const handleCart = ( index: number ) => {
+        const productStore = JSON.stringify(data[index]);
+        localStorage.setItem(`@Produto-${index}`, productStore);
+    }
+
+    return (
+        <Container>
+            <section>
+                {data.map((prod, index) => (
+                    <div className="product-content" key={prod.id}>
+                        <img src={prod.photo} alt="iphone" width="70%" height="auto"/>
+                        <h4>{prod.name}</h4>
+                        <span>{prod.description}</span>
+                        <h6>R$ {prod.price}</h6>
+                        <button onClick={() => handleCart(index)} className="waves-effect waves-light btn pink accent-2 ">Adicionar ao carrinho</button>
+                    </div>
+                ))}
+            </section>
+        </Container>
+    );
 }
 
 export default Home;
