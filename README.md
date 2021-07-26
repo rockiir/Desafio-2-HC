@@ -20,12 +20,16 @@ BoraHex é a continuação do primeiro desafio para o Hiring Coders. A aplicaç�
  - Javascript
  - React.js
  - Materialize
+ - GraphQl
+ - ApollloClient
 # Aprendizados adquiridos
 ### Através deste desafio pude adquirir conhecimentos sobre:
 
 - LocalStorage
  - netlify
  - Materialize
+ - GraphQl
+ - ApollloClient
 # Resultado Final
 
 ![](https://github.com/rockiir/Desafio-2-HC/blob/main/imgREADME/KYdIzWq0hp.png)
