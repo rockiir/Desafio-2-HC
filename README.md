@@ -9,7 +9,7 @@ Dados no localstorage
 Código fonte no github com o arquivo README detalhando as funcionalidades da programação
 
 # Sobre o projeto
-https://nostalgic-goldstine-7bc062.netlify.app/
+https://nostalgic-goldstine-7bc062.netlify.app/ (não funciona com server)
 
 BoraHex é a continuação do primeiro desafio para o Hiring Coders. A aplicação consiste em uma página promocional com a opção de cadastro de E-mail cujo o qual é armazenado no local storage.
 
